@@ -2,10 +2,16 @@ import streamlit as st
 import pickle
 import numpy as np
 from sklearn import *
-model = pickle.load(open('dtr.pkl', 'rb'))
-    fuel_Diesel=1
-    if request.method == 'POST':
-        Year = int(request.form['year'])
+
+# import the model
+df = pickle.load(open('df.pkl', 'rb'))
+df1 = pickle.load(open('df1.pkl','rb'))
+dtr = pickle.load(open('dtr.pkl','rb'))
+
+st.title("Car Predictor")
+
+ name = st.selectbox('name',df1['name'].unique())
+        year = st.selectbox('year',df1['year'])
         selling_price=float(request.form['selling_price'])
         km_driven=float(request.form['km_driven'])
         owner_First Owner=request.form['owner_First Owner']
@@ -36,7 +42,7 @@ model = pickle.load(open('dtr.pkl', 'rb'))
             transmission_Manual=1
         else:
             transmission_Automatic=0
-        prediction=model.predict([[selling_price,km_driven2,owner_First Owner,owner_Second Owner,owner_Third Owner,owner_Fourth & Above Owner,owner_Test Drive Cars,Year,fuel_Diesel,fuel_Petrol,fuel_CNG,fuel_LPG,fuel_Electric,seller_type_Individual,seller_type_Dealer,seller_type_Trustmark Dealer,transmission_Manual,transmittion_Automatic]])
+        prediction=model.predict([[selling_price,km_driven,owner_First Owner,owner_Second Owner,owner_Third Owner,owner_Fourth & Above Owner,owner_Test Drive Cars,Year,fuel_Diesel,fuel_Petrol,fuel_CNG,fuel_LPG,fuel_Electric,seller_type_Individual,seller_type_Dealer,seller_type_Trustmark Dealer,transmission_Manual,transmittion_Automatic]])
         output=round(prediction[0],2)
         if output<0:
             return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
