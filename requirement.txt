@@ -1,5 +1,6 @@
-pd=='1.4.2'
-np=='1.21.5'
-sns=='0.11.2'
-scikit-learn
-sklearn=='0'
+pd==1.4.2
+np==1.21.5
+sns==0.11.2
+scikit-learn==1.0.2
+stremlit==
+
