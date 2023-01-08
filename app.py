@@ -6,7 +6,7 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 model = pickle.load(open('dtr.pkl', 'rb'))
-    Fuel_Type_Diesel=1
+    fuel_Diesel=1
     if request.method == 'POST':
         Year = int(request.form['year'])
         selling_price=float(request.form['selling_price'])
