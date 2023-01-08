@@ -1,10 +1,7 @@
-from flask import Flask, render_template, request
-import jsonify
-import requests
+import streamlit as st
 import pickle
 import numpy as np
-import sklearn
-from sklearn.preprocessing import StandardScaler
+from sklearn import *
 model = pickle.load(open('dtr.pkl', 'rb'))
     fuel_Diesel=1
     if request.method == 'POST':
