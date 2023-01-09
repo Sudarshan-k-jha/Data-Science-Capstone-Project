@@ -14,8 +14,8 @@ name = st.selectbox('name',df1['name'].unique())
 year = st.selectbox('year',df1['year'])
 selling_price=float(request.form['selling_price'])
 km_driven=float(request.form['km_driven'])
-owner_First Owner=request.form['owner_First Owner']
-if(owner_First Owner=='First owner'):
+owner_First owner=request.form['owner_First Owner']
+if(owner_First owner=='First owner'):
         owner_First owner=0
         owner_Second owner=2
         owner_Third owner=3
