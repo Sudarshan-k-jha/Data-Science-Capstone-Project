@@ -16,10 +16,10 @@ selling_price=float(request.form['selling_price'])
 km_driven=float(request.form['km_driven'])
 owner_First Owner=request.form['owner_First Owner']
 if(owner_First Owner=='First owner'):
-        owner_First Owner=0
-        owner Second_Owner=2
-        owner Third_Owner=3
-        owner_Fourth & Above Owner=1
+        owner_First owner=0
+        owner_Second owner=2
+        owner_Third owner=3
+        owner_Fourth & Above owner=1
          else:
             owner_Test Drive Car=4
         fuel_Petrol=request.form['fuel_Petrol']
