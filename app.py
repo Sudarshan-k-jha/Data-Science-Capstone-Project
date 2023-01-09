@@ -44,12 +44,3 @@ if(owner_First Owner=='First owner'):
             transmission_Automatic=0
         prediction=model.predict([[selling_price,km_driven,owner_First Owner,owner_Second Owner,owner_Third Owner,owner_Fourth & Above Owner,owner_Test Drive Cars,Year,fuel_Diesel,fuel_Petrol,fuel_CNG,fuel_LPG,fuel_Electric,seller_type_Individual,seller_type_Dealer,seller_type_Trustmark Dealer,transmission_Manual,transmittion_Automatic]])
         output=round(prediction[0],2)
-        if output<0:
-            return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
-        else:
-            return render_template('index.html',prediction_text="You Can Sell The Car at {}".format(output))
-    else:
-        return render_template('index.html')
-
-if __name__=="__main__":
-    app.run(debug=True)
