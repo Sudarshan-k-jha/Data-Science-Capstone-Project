@@ -10,7 +10,7 @@ dtr = pickle.load(open('dtr.pkl','rb'))
 
 st.title("Car Predictor")
 
- name = st.selectbox('name',df1['name'].unique())
+name = st.selectbox('name',df1['name'].unique())
         year = st.selectbox('year',df1['year'])
         selling_price=float(request.form['selling_price'])
         km_driven=float(request.form['km_driven'])
